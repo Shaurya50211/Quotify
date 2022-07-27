@@ -19,6 +19,7 @@
 		D98C3EF22891BC5A0023C2EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D98C3EF42891BC5B0023C2EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D98C3EF72891BC5B0023C2EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D98C3F0E2891ECD90023C2EB /* Quotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quotify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +52,9 @@
 		D98C3EEF2891BC5A0023C2EB /* Quotify */ = {
 			isa = PBXGroup;
 			children = (
+				D98C3F0E2891ECD90023C2EB /* Quotify.entitlements */,
 				D98C3EF02891BC5A0023C2EB /* QuotifyApp.swift */,
-				D98C3EF22891BC5A0023C2EB /* ContentView.swift */,
+				D98C3F082891CFC30023C2EB /* Views */,
 				D98C3EF42891BC5B0023C2EB /* Assets.xcassets */,
 				D98C3EF62891BC5B0023C2EB /* Preview Content */,
 			);
@@ -65,6 +67,14 @@
 				D98C3EF72891BC5B0023C2EB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D98C3F082891CFC30023C2EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D98C3EF22891BC5A0023C2EB /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +274,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quotify/Quotify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotify/Preview Content\"";
@@ -282,6 +293,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryagupta.Quotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,6 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quotify/Quotify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotify/Preview Content\"";
@@ -311,6 +324,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.shauryagupta.Quotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
