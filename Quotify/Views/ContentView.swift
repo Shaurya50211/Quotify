@@ -39,7 +39,8 @@ struct ContentView: View {
                             .shadow(color: .gray, radius: 20)
                         VStack (alignment: .leading){
                             HStack {
-                                Text(quoteData?.content ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+
+                                Text(quoteData?.content ?? "Press the button below")
                                     .fontWeight(.light)
                                     .font(.title2)
                                     .padding()
@@ -48,7 +49,7 @@ struct ContentView: View {
                                     .foregroundColor(.black)
                                     .padding(.trailing)
                             }
-                            Text(quoteData?.author ?? "Lorem")
+                            Text(quoteData?.author ?? "")
                                 .fontWeight(.semibold)
                                 .padding()
                                 .padding(.leading)
