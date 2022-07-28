@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var quoteData: QuoteModel?
     @State private var animateGradient = false
     var body: some View {
+        
         ZStack {
             // MARK: - Linear Gradient Animation
             LinearGradient(colors: [.purple, .yellow], startPoint: animateGradient ? .topLeading : .bottomLeading, endPoint: animateGradient ? .bottomTrailing : .topTrailing)
@@ -28,61 +29,68 @@ struct ContentView: View {
             
             // MARK: - Actual swiftUI
             
-            VStack {
-                ZStack {
-                    Color.cyan
-                        .frame(height: 350, alignment: .center)
-                        .cornerRadius(20)
-                        .padding()
-                        .shadow(color: .gray, radius: 20)
-                    VStack (alignment: .leading){
-                        HStack {
-                        Text(quoteData?.content ?? "Press the button below")
-                            .fontWeight(.light)
-                            .font(.title2)
-                            .padding()
-                            Image(systemName: "arrow.down")
-                                .font(.largeTitle)
-                        }
-                        Text(quoteData?.author ?? "")
-                            .fontWeight(.semibold)
-                            .padding()
-                            .font(.subheadline)
-                    }
-                    .frame(height: 350, alignment: .leading)
-                    .foregroundColor(.white)
-                }
-                
-                
-                
-                Button(action: {
-                    loadData()
-                }) {
+            
+                VStack {
                     ZStack {
-                        LinearGradient(colors: [.green, .mint], startPoint: .topLeading, endPoint: .bottomTrailing)
-                            .frame(height: 50)
-                            .cornerRadius(5)
+                        Color.cyan
+                            .frame(height: 350, alignment: .center)
+                            .cornerRadius(20)
                             .padding()
-                        Text("Quotify Me!")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .bold()
+                            .shadow(color: .gray, radius: 20)
+                        VStack (alignment: .leading){
+                            HStack {
+                                Text(quoteData?.content ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+                                    .fontWeight(.light)
+                                    .font(.title2)
+                                    .padding()
+                                    .padding(.leading)
+                                    .font(.largeTitle)
+                                    .foregroundColor(.black)
+                                    .padding(.trailing)
+                            }
+                            Text(quoteData?.author ?? "Lorem")
+                                .fontWeight(.semibold)
+                                .padding()
+                                .padding(.leading)
+                                .padding(.trailing)
+                                .font(.subheadline)
+                                .foregroundColor(Color(UIColor(red: 0.00, green: 0.00, blue: 0.55, alpha: 1.00)))
+                        }
+                        .frame(height: 350, alignment: .leading)
                     }
+                    
+                    
+                    
+                    Button(action: {
+                        loadData()
+                    }){
+                        ZStack {
+                            LinearGradient(colors: [.green, .mint], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                .frame(height: 50)
+                                .cornerRadius(5)
+                                .padding()
+                            Text("Quotify Me!")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                    }
+                    .frame(height: 50)
+                    
                 }
-                .frame(height: 50)
-                
             }
-        }
+        
     }
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+                .previewInterfaceOrientation(.portrait)
         }
     }
     
     private func loadData() {
-        guard let url = URL(string: "https://api.quotable.io/random") else {
+        guard let url = URL(string: "https://api.quotable.io/random?famous-people,maxLength=210") else {
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
